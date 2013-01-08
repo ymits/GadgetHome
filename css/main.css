@@ -1,0 +1,347 @@
+/* =============================================================================
+   NORMALIZATION
+========================================================================== */
+
+*  {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+
+/* =============================================================================
+   COMMONS
+========================================================================== */
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+#container{
+	width:1040px;
+	margin-right:auto;
+	margin-left:auto;
+	background: -webkit-linear-gradient(top, #555555 1%,#cccccc 100%);
+	box-shadow:0px 0px 50px #bbbbbb;
+}
+/*ヘッダー*/
+#header {
+	background-image: -webkit-linear-gradient(top, #000000 0%, #aaaaaa 100%);
+	color: #fff;
+	position: fixed !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: inherit;
+	margin: inherit;
+	height: 60px;
+	font-size: 42px;
+	z-index: 20;
+	font-family: 'Plaster', cursive;
+	padding-top: 10px;
+	padding-left: 10px;
+	text-shadow: 5px 5px 5px #888888;
+}
+
+
+/*! gridster.js - v0.1.0 - 2012-08-20
+* http://gridster.net/
+* Copyright (c) 2012 ducksboard; Licensed MIT */
+
+#zoomoutContainer.gridster {
+	margin-top: 60px;
+}
+.gridster {
+    position:relative;
+}
+
+.gridster > * {
+    margin: 0 auto;
+    transition: height .4s;
+}
+
+.gridster .gs_w{
+    z-index: 2;
+    position: absolute;
+}
+
+.ready .gs_w:not('.preview-holder') {
+    transition: opacity 1s, left 1s, top 1s, width 1s, height 1s;
+}
+
+.gridster .preview-holder {
+    z-index: 1;
+    position: absolute;
+    background-color: #fff;
+    border-color: #fff;
+    opacity: 0.3;
+}
+
+.gridster .player-revert {
+    z-index: 10!important;
+    transition:  left 1s, top .3s!important;
+}
+
+.gridster .dragging {
+    z-index: 10!important;
+    transition: all 1s !important;
+}
+
+/* Uncomment this if you set helper : "clone" in draggable options */
+/*.gridster .player {
+  opacity:0;
+}*/
+
+/* Gridster styles */
+
+.gridster {
+    width: 1028px;
+
+    opacity: .8;
+
+    transition: opacity .6s;
+}
+
+.gridster .gs_w {
+    background: #FFF;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    border: solid 1px #000000;
+}
+.gridster .gs_w .title{
+	text-align: right;
+	background-image: -webkit-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+	color: #ffffff;
+	height: 30px;
+	border-radius: 10px 10px 0 0;
+	position: relative;
+}
+.gridster .gs_w .title > div{
+	display: inline-block;
+}
+.gridster .gs_w .title .text{
+	text-align: left;
+	position: absolute;
+	top: 5px;
+	left: 10px;
+}
+.gridster .gs_w .title .size,
+.gridster .gs_w .title .zoomout,
+.gridster .gs_w .title .zoomin{
+	width: 20px;
+	height: 20px;
+	border: solid 1px #FFFFFF;
+	text-align: center;
+	margin: 5px 5px 5px 0px;
+}
+.gridster .gs_w .title .popup {
+	background: rgba(255, 255, 255, 0.8);
+	color: #000000;
+	border: solid 1px #000000;
+	position: absolute;
+	width: 90px;
+	z-index: 20;
+	border-radius: 5px;
+}
+.gridster .gs_w .title .popup > div{
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	line-height: 30px;
+	border-bottom: solid 1px #000000;
+}
+.gridster .gs_w .title .popup > div:last-child{
+	border-bottom: solid 0px #000000;
+}
+.gridster .gs_w .title .popup > div:hover{
+	background: rgba(51, 102, 255, 0.8);
+}
+.gridster .player {
+    -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.gridster .preview-holder {
+    /*border: none!important;*/
+   border:dotted 5px #FFFF99; 
+    background: rgba(255,255,255,.2)!important;
+}
+
+
+
+.gadget .contents .priceBoardPanel table {
+    border: 1px #aaaaaa solid;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 5px;
+}
+
+.gadget .contents .priceBoardPanel table .bid,
+.gadget .contents .priceBoardPanel table .ask,
+.gadget .contents .priceBoardPanel table .high,
+.gadget .contents .priceBoardPanel table .low{
+	width:80px;
+}
+.gadget .contents .priceBoardPanel table .close{
+	width:120px;
+}
+/*
+.gadget .contents .priceBoardPanel table tbody tr:nth-of-type(odd){
+	background-color: #dddddd;
+}
+.gadget .contents .priceBoardPanel table tbody tr:nth-of-type(even){
+	background-color: #FFFFFF;
+}
+*/
+.gadget .contents .priceBoardPanel table thead{
+	background-image: -webkit-linear-gradient(top, #f3e2c7 0%,#aaaaaa 50%,#aaaaaa 51%,#e9d4b3 100%);
+}
+.gadget .contents .priceBoardPanel table tbody{
+	background-image: -webkit-linear-gradient(top, #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#f5f6f6 100%);
+}
+.gadget .contents .priceBoardPanel table th {
+    padding: 5px;
+    border: #aaaaaa solid;
+    border-width: 0 0 1px 1px;
+    font-weight: bold;
+    line-height: 120%;
+    text-align: center;
+}
+.gadget .contents .priceBoardPanel table td {
+    padding: 5px;
+    border: 1px #aaaaaa solid;
+    border-width: 0 0 1px 1px;
+    text-align: center;
+}
+
+.gadget .contents .streamingOrderPanel {
+	margin: 0 5px;
+	border-radius: 5px;
+	/*color:#ffffff;
+	height: 180px;
+	background-image: -webkit-linear-gradient(top, #0e0e0e 0%, #7d7e7d 100%);
+	*/
+}
+.gadget .contents .streamingOrderPanel > div > div {
+	display: inline-block;
+}
+.gadget .contents .streamingOrderPanel > div {
+	margin:5px;
+}
+.gadget .contents .streamingOrderPanel .item {
+	width:70px;
+}
+.gadget .contents .streamingOrderPanel .currencyPair input[type=text] {
+	width:100px;
+	height:38px;
+	border:solid 1px #aaaaaa;
+	background-color: #F6F6F6;
+	text-align: center;
+	border-radius: 3px 0 0 3px;
+	font-weight: bold;
+	color: #848484;
+}
+.gadget .contents .streamingOrderPanel .currencyPair button {
+	width:38px;
+	height:38px;
+	border:solid 1px #aaaaaa;
+	border-radius: 0 3px 3px 0;
+	color: #848484;
+}
+.gadget .contents .streamingOrderPanel .amount input[type=text] {
+	width:138px;
+}
+.gadget .contents .streamingOrderPanel .streaming {
+	
+}
+.gadget .contents .streamingOrderPanel .streaming .bid,
+.gadget .contents .streamingOrderPanel .streaming .ask {
+	width: 99px;
+	height: 80px;
+	border-radius: 5px;
+	box-shadow: 0px 2px 10px #000000;
+}
+.gadget .contents .streamingOrderPanel .streaming .bid {
+	background-image: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+}
+.gadget .contents .streamingOrderPanel .streaming .ask {
+	background-image: -webkit-linear-gradient(top, #ae0000 0%,#b90000 50%,#b00000 51%,#fd0000 100%);
+}
+.gadget .contents .streamingOrderPanel .streaming .bid .type,
+.gadget .contents .streamingOrderPanel .streaming .ask .type {
+	padding: 5px;
+	color:#ffffff;
+	font-weight: bold;
+	font-size:15px;
+	display: inline-block;
+}
+.gadget .contents .streamingOrderPanel .streaming .bid .rate,
+.gadget .contents .streamingOrderPanel .streaming .ask .rate {
+	
+}
+.gadget .contents .streamingOrderPanel .streaming .bid .rate > div,
+.gadget .contents .streamingOrderPanel .streaming .ask .rate > div {
+	display: inline-block;
+}
+.gadget .contents .streamingOrderPanel .streaming .top {
+	font-size : 25px;
+	font-weight: bold;
+	color:#ffffff;
+	display: inline-block;
+}
+.gadget .contents .streamingOrderPanel .streaming .small {
+	font-size : 30px;
+	font-weight: bold;
+	color:#ffffff;
+}
+.gadget .contents .streamingOrderPanel .streaming .large {
+	font-size : 45px;
+	font-weight: bold;
+	color:#ffffff;
+	padding-left: 20px;
+}
+.gadget .contents .streamingOrderPanel .spread .sp {
+	color: #FFC600;
+	width:20px;
+	text-align: center;
+	font-weight: bold;
+}
+.gadget .contents .streamingOrderPanel .spread .value {
+	text-align: center;
+}
+.gadget .contents .streamingOrderPanel .pl table {
+    border: 1px #aaaaaa solid;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 10px;
+}
+.gadget .contents .streamingOrderPanel .pl table thead{
+	background-image: -webkit-linear-gradient(top, #f3e2c7 0%,#aaaaaa 50%,#aaaaaa 51%,#e9d4b3 100%);
+}
+.gadget .contents .streamingOrderPanel .pl table tbody{
+	background-image: -webkit-linear-gradient(top, #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#f5f6f6 100%);
+}
+.gadget .contents .streamingOrderPanel .pl table th {
+    padding: 5px;
+    border: #aaaaaa solid;
+    border-width: 0 0 1px 1px;
+    font-weight: normal;
+    line-height: 120%;
+    text-align: center;
+    font-size:15px;
+}
+.gadget .contents .streamingOrderPanel .pl table td {
+    padding: 5px;
+    border: 1px #aaaaaa solid;
+    border-width: 0 0 1px 1px;
+    text-align: right;
+    width: 77px;
+	height: 50px;
+}
+.gadget .contents .streamingOrderPanel .pl table thead td {
+	height: 25px;
+}	

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+		<link href='http://fonts.googleapis.com/css?family=Plaster' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/jcombox.css">
+        <link rel="stylesheet" href="css/smartspinner.css">
+        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+        <script src="js/vendor/jquery-1.8.0.min.js"></script>
+        <script src="js/vendor/jquery.gridstar.js"></script>
+        <script src="js/vendor/underscore.js"></script>
+        <script src="js/vendor/backbone.js"></script>
+        <script src="js/vendor/jcombox.js"></script>
+        <script src="js/vendor/smartspinner.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/template" id="gadget-template">
+		  <div class="title">	
+		  	<div class="text"></div>
+		  	<div class="size" style="display: none;">S</div>
+		  	<div class="popup" style="display: none;"></div>
+		  	<div class="zoomout" style="display: none;">大</div>
+		  	<div class="zoomin" style="display: none;">小</div>
+		  </div>
+		  <div class="contents"></div>
+		</script>
+		<script type="text/template" id="priceBoardPanel-1_1-template">
+			<table>
+				<thead>
+					<tr><th></th><th class="bid">BID</th><th class="ask">ASK</th></tr>
+				</thead>
+				<tbody>
+					<tr><td class="currencyPair">USD/JPY</td><td class="bid">80.123</td><td class="ask">80.140</td></tr>
+					<tr><td class="currencyPair">EUR/USD</td><td class="bid">1.23234</td><td class="ask">1.23251</td></tr>
+					<tr><td class="currencyPair">EUR/JPY</td><td class="bid">98.376</td><td class="ask">98.452</td></tr>
+					<tr><td class="currencyPair">GBP/JPY</td><td class="bid">124.319</td><td class="ask">124.400</td></tr>
+					<tr><td class="currencyPair">AUD/JPY</td><td class="bid">81.878</td><td class="ask">81.900</td></tr>
+				</tbody>
+			</table>
+		</script>
+		<script type="text/template" id="priceBoardPanel-1_2-template">
+			<table>
+				<thead>
+					<tr><th></th><th class="bid">BID</th><th class="ask">ASK</th></tr>
+				</thead>
+				<tbody>
+					<tr><td class="currencyPair">USD/JPY</td><td class="bid">80.123</td><td class="ask">80.140</td></tr>
+					<tr><td class="currencyPair">EUR/USD</td><td class="bid">1.23234</td><td class="ask">1.23251</td></tr>
+					<tr><td class="currencyPair">EUR/JPY</td><td class="bid">98.376</td><td class="ask">98.452</td></tr>
+					<tr><td class="currencyPair">GBP/JPY</td><td class="bid">124.319</td><td class="ask">124.400</td></tr>
+					<tr><td class="currencyPair">AUD/JPY</td><td class="bid">81.878</td><td class="ask">81.900</td></tr>
+					<tr><td class="currencyPair">NZD/JPY</td><td class="bid">63.797</td><td class="ask">63.845</td></tr>
+					<tr><td class="currencyPair">CAD/USD</td><td class="bid">79.300</td><td class="ask">79.348</td></tr>
+					<tr><td class="currencyPair">CHF/JPY</td><td class="bid">81.970</td><td class="ask">82.018</td></tr>
+					<tr><td class="currencyPair">ZAR/JPY</td><td class="bid">9.350</td><td class="ask">9.396</td></tr>
+					<tr><td class="currencyPair">HKD/JPY</td><td class="bid">10.132</td><td class="ask">10.160</td></tr>
+					<tr><td class="currencyPair">SGD/JPY</td><td class="bid">62.903</td><td class="ask">62.951</td></tr>
+					<tr><td class="currencyPair">AUD/USD</td><td class="bid">1.04043</td><td class="ask">1.04086</td></tr>
+				</tbody>
+			</table>
+		</script>
+		<script type="text/template" id="priceBoardPanel-2_1-template">
+			<table>
+				<thead>
+					<tr><th></th><th class="bid">BID</th><th class="ask">ASK</th><th class="high">高値</th><th class="low">安値</th><th class="close">前日終値</th></tr>
+				</thead>
+				<tbody>
+					<tr><td class="currencyPair">USD/JPY</td><td class="bid">80.123</td><td class="ask">80.140</td><td class="high">80.540</td><td class="low">80.114</td><td class="close">80.125</td></tr>
+					<tr><td class="currencyPair">EUR/USD</td><td class="bid">1.23234</td><td class="ask">1.23251</td><td class="high">1.24110</td><td class="low">1.23123</td><td class="close">1.23231</td></tr>
+					<tr><td class="currencyPair">EUR/JPY</td><td class="bid">98.376</td><td class="ask">98.452</td><td class="high">98.829</td><td class="low">97.981</td><td class="close">98213</td></tr>
+					<tr><td class="currencyPair">GBP/JPY</td><td class="bid">124.319</td><td class="ask">124.400</td><td class="high">124.806</td><td class="low">124.134</td><td class="close">124.692</td></tr>
+					<tr><td class="currencyPair">AUD/JPY</td><td class="bid">81.878</td><td class="ask">81.900</td><td class="high">82.120</td><td class="low">81.503</td><td class="close">81.382</td></tr>
+				</tbody>
+			</table>
+		</script>
+		<script type="text/template" id="streamingOrderPanel-1_1-template">
+			<div class="currencyPair">
+				<div class="item">
+					通貨ペア：
+				</div>
+				<div class="value">
+					<input type="text" id="currencyPair" value="USD/JPY"/><button>▼</button>
+					<!--
+					<select>
+						<option>USD/JPY</option>
+						<option>EUR/USD</option>
+						<option>EUR/JPY</option>
+						<option>GBP/JPY</option>
+						<option>AUD/JPY</option>
+						<option>NZD/JPY</option>
+						<option>CAD/USD</option>
+						<option>CHF/JPY</option>
+						<option>ZAR/JPY</option>
+						<option>HKD/JPY</option>
+						<option>SGD/JPY</option>
+						<option>AUD/USD</option>
+					</select>
+					-->
+				</div>
+			</div>
+			<div class="amount">
+				<div class="item">
+					枚数：
+				</div>
+				<div class="value">
+					<input type="text" id="amount" value="5" class="smartspinner" />
+				</div>	
+			</div>
+			<div class="streaming">
+				<div class="bid">
+					<div class="type">売り</div>
+					<div class="top">81.</div>
+					<div class="rate">
+						<div class="large">23</div>
+						<div class="small">4</div>
+					</div>
+				</div>
+				<div class="spread">
+					<div class="sp">SP</div>
+					<div class="value">2.2</div>
+				</div>
+				<div class="ask">
+					<div class="type">買い</div>
+					<div class="top">81.</div>
+					<div class="rate">
+						<div class="large">25</div>
+						<div class="small">6</div>
+					</div>
+				</div>
+			</div>
+		</script>
+		<script type="text/template" id="streamingOrderPanel-1_2-template">
+			<div class="currencyPair">
+				<div class="item">
+					通貨ペア：
+				</div>
+				<div class="value">
+					<input type="text" id="currencyPair" value="USD/JPY"/><button>▼</button>
+					<!--
+					<select>
+						<option>USD/JPY</option>
+						<option>EUR/USD</option>
+						<option>EUR/JPY</option>
+						<option>GBP/JPY</option>
+						<option>AUD/JPY</option>
+						<option>NZD/JPY</option>
+						<option>CAD/USD</option>
+						<option>CHF/JPY</option>
+						<option>ZAR/JPY</option>
+						<option>HKD/JPY</option>
+						<option>SGD/JPY</option>
+						<option>AUD/USD</option>
+					</select>
+					-->
+				</div>
+			</div>
+			<div class="amount">
+				<div class="item">
+					枚数：
+				</div>
+				<div class="value">
+					<input type="text" id="amount" value="5" class="smartspinner" />
+				</div>	
+			</div>
+			<div class="streaming">
+				<div class="bid">
+					<div class="type">売り</div>
+					<div class="top">81.</div>
+					<div class="rate">
+						<div class="large">23</div>
+						<div class="small">4</div>
+					</div>
+				</div>
+				<div class="spread">
+					<div class="sp">SP</div>
+					<div class="value">2.2</div>
+				</div>
+				<div class="ask">
+					<div class="type">買い</div>
+					<div class="top">81.</div>
+					<div class="rate">
+						<div class="large">25</div>
+						<div class="small">6</div>
+					</div>
+				</div>
+			</div>
+			<div class="pl">
+				<table>
+					<thead>
+						<tr><td>売建</td><th></th><td>買建</td></tr>	
+					</thead>
+					<tbody>
+						<tr><td>10</td><th>枚数</th><td>20</td></tr>
+						<tr><td>79.123</td><th>平均<Br>約定単価</th><td>79.350</td></tr>
+						<tr><td>-100.1</td><th>損益/pips</th><td>90.5</td></tr>
+						<tr><td>-100,100</td><th>損益/円</th><td>181,000</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</script>
+		<script type="text/template" id="chartPanel-1_1-template">
+			<div id="chart"></div>
+		</script>
+		<script type="text/template" id="chartPanel-2_2-template">
+			<div id="chart"></div>
+		</script>
+		<script type="text/template" id="chartPanel-Max-template">
+			<div id="chart"></div>
+		</script>
+		<script src="js/gadget.js"></script>
+		<script src="js/gadgetFactory.js"></script>
+		<script src="js/priceBoardPanel-1_1.js"></script>
+		<script src="js/priceBoardPanel-1_2.js"></script>
+		<script src="js/priceBoardPanel-2_1.js"></script>
+		<script src="js/streamingOrderPanel-1_1.js"></script>
+		<script src="js/streamingOrderPanel-1_2.js"></script>
+		<script src="js/chartPanel-1_1.js"></script>
+		<script src="js/chartPanel-2_2.js"></script>
+		<script src="js/chartPanel-Max.js"></script>
+		<script>		
+		  $(function(){
+		  	var gridster = $("#mainContainer.gridster").gridster({
+		        widget_margins: [5, 5],
+		        widget_base_dimensions: [250, 220],
+		        min_cols: 4,
+		        widget_selector: '> div'
+		    }).data('gridster');
+		    var zoomoutGridster = $("#zoomoutContainer.gridster").gridster({
+		        widget_margins: [5, 5],
+		        widget_base_dimensions: [250, 220],
+		        min_cols: 4,
+		        widget_selector: '> div'
+		    }).data('gridster');
+		    
+		  	window.GadgetFactory.getInstance().create({
+		  		'row': '1',
+		  		'col': '1',
+		  		'currenctSize': '1_1',
+		  		'title': 'プライスボード',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  		panel:{
+		  			'1_1': 'PriceBoardPanel_1_1',
+		  			'2_1': 'PriceBoardPanel_2_1',
+		  			'1_2': 'PriceBoardPanel_1_2'
+		  		}
+		  	});
+		  	window.GadgetFactory.getInstance().create({
+		  		'row': '1',
+		  		'col': '2',
+		  		'currenctSize': '1_1',
+		  		'title': 'ストリーミング注文',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  		panel:{
+		  			'1_1': 'StreamingOrderPanel_1_1',
+		  			'1_2': 'StreamingOrderPanel_1_2'
+		  		}
+		  	});
+		  	window.GadgetFactory.getInstance().create({
+		  		'row': '1',
+		  		'col': '3',
+		  		'currenctSize': '2_2',
+		  		'title': 'チャート',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  		panel:{
+		  			'1_1': 'ChartPanel_1_1',
+		  			'2_2': 'ChartPanel_2_2',
+		  			'max': 'ChartPanel_Max'
+		  		}
+		  	});
+		  	window.GadgetFactory.getInstance().create({
+		  		'row': '2',
+		  		'col': '1',
+		  		'currenctSize': '2_2',
+		  		'title': 'チャート',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  		panel:{
+		  			'1_1': 'ChartPanel_1_1',
+		  			'2_2': 'ChartPanel_2_2',
+		  			'max': 'ChartPanel_Max'
+		  		}
+		  	});
+		  	window.GadgetFactory.getInstance().create({
+		  		'row': '3',
+		  		'col': '3',
+		  		'currenctSize': '1_1',
+		  		'title': 'ストリーミング注文',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  		panel:{
+		  			'1_1': 'StreamingOrderPanel_1_1',
+		  			'1_2': 'StreamingOrderPanel_1_2'
+		  		}
+		  	});
+		  	window.GadgetFactory.getInstance().create({
+		  		'row': '3',
+		  		'col': '4',
+		  		'currenctSize': '1_1',
+		  		'title': 'チャート',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  		panel:{
+		  			'1_1': 'ChartPanel_1_1',
+		  			'2_2': 'ChartPanel_2_2',
+		  			'max': 'ChartPanel_Max'
+		  		}
+		  	});
+			window.GadgetFactory.getInstance().create({
+		  		'row': '4',
+		  		'col': '1',
+		  		'currenctSize': '1_2',
+		  		'title': 'その他gadget1',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  	});
+			window.GadgetFactory.getInstance().create({
+		  		'row': '4',
+		  		'col': '2',
+				'currenctSize': '1_1',
+		  		'title': 'その他gadget2',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  	});
+		  	window.GadgetFactory.getInstance().create({
+		  		'row': '4',
+		  		'col': '3',
+		  		'currenctSize': '1_1',
+		  		'title': 'その他gadget3',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  	});
+		  	window.GadgetFactory.getInstance().create({
+		  		'row': '4',
+		  		'col': '4',
+		  		'currenctSize': '1_1',
+		  		'title': 'その他gadget4',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  	});
+		  	window.GadgetFactory.getInstance().create({
+		  		'row': '5',
+		  		'col': '2',
+		  		'currenctSize': '2_1',
+		  		'title': 'その他gadget5',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  	});
+			window.GadgetFactory.getInstance().create({
+		  		'row': '5',
+		  		'col': '4',
+		  		'currenctSize': '1_1',
+		  		'title': 'その他gadget6',
+		  		'gridster': gridster,
+		  		'zoomoutGridster': zoomoutGridster,
+		  	});
+		  });
+
+		</script>
+    </head>
+    <body>
+	<div id="container">
+        <div id="header">FINANCIAL HACKATHON</div>
+        <div id="zoomoutContainer" class="gridster">
+        </div>
+        <div id="mainContainer" class="gridster">
+        </div>
+	</div>
+
+        
+
+    </body>
+</html>
